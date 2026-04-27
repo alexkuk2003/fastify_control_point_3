@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title Список пользователей
+    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css")
+  body
+    h1 Все пользователи
+    a(href="/users/create") + Добавить нового
+    table
+      thead
+        tr
+          th ID
+          th Имя
+          th Email
+          th Действия
+      tbody
+        each user in users
+          tr
+            td #{user.id}
+            td #{user.name}
+            td #{user.email}
+            td
+              a(href=`/users/edit/${user.id}`) Редактировать
+              | 
+              form(method="POST" action=`/users/delete/${user.id}` style="display:inline")
+                button(type="submit" style="background: #e53935; color: white") Удалить
+    
+    script(src="/script.js")
