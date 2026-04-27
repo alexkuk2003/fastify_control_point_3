@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title Редактировать
+    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css")
+  body
+    h1 Редактирование
+    form(method="POST" action=`/users/update/${user.id}`)
+      input(type="text" name="name" value=user.name required)
+      input(type="email" name="email" value=user.email required)
+      button(type="submit") Обновить
+    a(href="/users") Отмена
+    script(src="/script.js")
