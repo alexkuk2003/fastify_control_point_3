@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title Создать
+    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css")
+  body
+    h1 Новый пользователь
+    form(method="POST" action="/users")
+      input(type="text" name="name" placeholder="Имя" required)
+      input(type="email" name="email" placeholder="Email" required)
+      button(type="submit") Сохранить
+    a(href="/users") Отмена
+    script(src="/script.js")
